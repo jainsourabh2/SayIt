@@ -1,3 +1,3 @@
 Dependencies:-
 1. Need a rating line image with 5 circle at equi distance of size 192*32. Currently i'm using the one i have created.
-2. Need a apple developer accout costing $99 for uploadind a build on Apple store.
+2. Need a apple developer accout costing $99 for uploading a build on Apple store.
