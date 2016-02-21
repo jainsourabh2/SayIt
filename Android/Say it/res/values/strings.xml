@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Say it!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+     <string name="title_activity_display_place">Places</string>
+     <string name="title_activity_feedback_place">FeedBack</string>
+     <string name="title_activity_Coupon">Coupon</string>
+     <integer-array name="dots_position">
+         <item >0</item>
+         <item >25</item>
+         <item >50</item>
+         <item >75</item>
+         <item >100</item>
+     </integer-array>
+
+</resources>
