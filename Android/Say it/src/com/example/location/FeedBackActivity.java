@@ -126,7 +126,7 @@ public class FeedBackActivity extends Activity implements TaskListener {
 
 		try {
 			deviceObj.put("pf", "Android");
-			deviceObj.put("osv", android.os.Build.VERSION.SDK_INT );
+			deviceObj.put("osv", android.os.Build.VERSION.RELEASE );
 			deviceObj.put("did", Secure.getString(this.getContentResolver(),
 					Secure.ANDROID_ID));
 			deviceObj.put("mnu", android.os.Build.MANUFACTURER);
