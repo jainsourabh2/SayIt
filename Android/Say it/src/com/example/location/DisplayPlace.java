@@ -1,12 +1,17 @@
 package com.example.location;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
@@ -41,6 +46,34 @@ public class DisplayPlace extends Activity implements TaskListener {
 				ratingTask.execute();
 			}
 		});
+		
+		String dirName = "Say_it_Coupons";
+        File myDirectory = new File(Environment.getExternalStorageDirectory(),
+                dirName);
+
+        if (!myDirectory.exists()) {
+            myDirectory.mkdirs();
+        }
+		
+		Button openSavedCoupon = (Button) findViewById(R.id.opencoupon);
+        openSavedCoupon.setTextColor(Color.WHITE);
+        openSavedCoupon.setTextSize(20);
+
+        openSavedCoupon.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent i = new Intent();
+                i.setAction(Intent.ACTION_GET_CONTENT);
+                i.setDataAndType(Uri.fromFile(new File(Environment
+                        .getExternalStorageDirectory().toString()
+                        + "/"
+                        + "Say_it_Coupons/")), "*/*");
+                startActivity(i);
+
+            }
+        });
 
 	}
 

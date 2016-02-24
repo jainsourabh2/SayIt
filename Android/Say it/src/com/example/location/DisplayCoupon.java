@@ -52,25 +52,6 @@ public class DisplayCoupon extends Activity {
 			}
 		});
 
-		Button openSavedCoupon = (Button) findViewById(R.id.opencoupon);
-		openSavedCoupon.setTextColor(Color.WHITE);
-		openSavedCoupon.setTextSize(20);
-
-		openSavedCoupon.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-
-				Intent i = new Intent();
-				i.setAction(Intent.ACTION_VIEW);
-				i.setDataAndType(Uri.fromFile(new File(Environment
-						.getExternalStorageDirectory().toString()
-						+ "/"
-						+ "Say_it_Coupons/")), "*/*");
-				startActivity(i);
-
-			}
-		});
 
 		saveCoupon.setOnClickListener(new View.OnClickListener() {
 
