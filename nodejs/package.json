@@ -1,0 +1,26 @@
+{
+  "name": "sayit",
+  "version": "0.0.1",	
+  "description" : "A feedback application for retail outlets",
+  "keywords": [
+    "feedback",
+    "sayit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jainsourabh2/SayIt.git"
+  },
+  "main": "sayit.js",
+  "dependencies": {
+    "async": "^1.5.0",
+    "body-parser": "^1.14.2",
+    "change-case": "^2.3.1",
+    "express": "^4.13.3",
+    "file-stream-rotator": "0.0.6",
+    "fs": "0.0.2",
+    "just.randomcolor": "^0.1.1",
+    "mongoose": "^4.3.3",
+    "morgan": "^1.6.1",
+    "nodemon": "^1.8.1"
+  }
+}
