@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -22,20 +22,28 @@ public class GetCoupon extends AsyncTask<Void, Void, ArrayList<Object>> {
 	private TaskListener caller;
 	private JSONArray jsonParam;
 
+	private ProgressDialog dialog;
+
 	public GetCoupon(Context context, TaskListener caller, JSONArray jsonParam) {
 		this.caller = caller;
 		this.jsonParam = jsonParam;
+		dialog = new ProgressDialog(context);
 	}
 
 	@Override
 	protected void onPostExecute(ArrayList<Object> result) {
 		super.onPostExecute(result);
+		 if (dialog.isShowing()) {
+	            dialog.dismiss();
+	        }
 		caller.onTaskSuccessFul(result);
 	}
 
 	@Override
 	protected void onPreExecute() {
 		super.onPreExecute();
+		this.dialog.setMessage("Loading...");
+        this.dialog.show();
 	}
 
 	@Override
@@ -53,22 +61,22 @@ public class GetCoupon extends AsyncTask<Void, Void, ArrayList<Object>> {
 			urlConnection.setRequestMethod("POST");
 			urlConnection.setUseCaches(false);
 			String charset = "UTF-8";
-			String query ="";
-		    try {
-				query = String.format("category=%s&"
-				                        + "feedback=%s&" 
-				                        + "devicemetrics=%s&",
-				                        URLEncoder.encode(jsonParam.get(0).toString(), charset),
-				                        URLEncoder.encode(jsonParam.get(1).toString(), charset),
-				                        URLEncoder.encode(jsonParam.get(2).toString(), charset));
+			String query = "";
+			try {
+				query = String
+						.format("category=%s&" + "feedback=%s&"
+								+ "devicemetrics=%s&", URLEncoder.encode(
+								jsonParam.get(0).toString(), charset),
+								URLEncoder.encode(jsonParam.get(1).toString(),
+										charset), URLEncoder.encode(jsonParam
+										.get(2).toString(), charset));
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=" + charset);
+			urlConnection.setRequestProperty("Content-Type",
+					"application/x-www-form-urlencoded;charset=" + charset);
 
-			
-			
 			urlConnection.connect();
 
 			OutputStreamWriter out = new OutputStreamWriter(
@@ -85,7 +93,7 @@ public class GetCoupon extends AsyncTask<Void, Void, ArrayList<Object>> {
 					sb.append(line + "\n");
 				}
 				br.close();
-			} 
+			}
 		} catch (MalformedURLException e) {
 
 			e.printStackTrace();
