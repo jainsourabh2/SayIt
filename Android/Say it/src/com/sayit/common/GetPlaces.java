@@ -2,7 +2,6 @@ package com.sayit.common;
 
 import java.util.ArrayList;
 
-import com.sayit.common.model.Place;
 
 import android.content.Context;
 import android.os.AsyncTask;
