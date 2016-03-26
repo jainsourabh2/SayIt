@@ -64,14 +64,21 @@ public class DisplayPlace extends Activity implements TaskListener {
             @Override
             public void onClick(View arg0) {
 
+            	String dirName = "Say_it_Coupons";
+            	File myDirectory = new File(Environment.getExternalStorageDirectory(),
+        				dirName);
+
+        		if (!myDirectory.exists()) {
+        			myDirectory.mkdirs();
+        		}else{
                 Intent i = new Intent();
-                i.setAction(Intent.ACTION_GET_CONTENT);
+                i.setAction(Intent.ACTION_VIEW);
                 i.setDataAndType(Uri.fromFile(new File(Environment
                         .getExternalStorageDirectory().toString()
                         + "/"
-                        + "Say_it_Coupons/")), "*/*");
+                        + "Say_it_Coupons/"+myDirectory.list()[0])), "image/*");
                 startActivity(i);
-
+        		}
             }
         });
 
