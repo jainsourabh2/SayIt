@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/selectedplaceIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingLeft="35dp"
+        android:contentDescription="place Logo"
+        android:src="@drawable/ic_launcher" />
+    
+     <Button
+         android:id="@+id/backButtonFeedback"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="10dp"
+         android:layout_marginStart="10dp"
+         android:background="@drawable/back" />
+
+    <TextView
+        android:id="@+id/selectedplaceLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/selectedplaceIcon"
+        android:ellipsize="marquee"
+        android:singleLine="false"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/selectedplaceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/selectedplaceLocation"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toRightOf="@id/selectedplaceIcon"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+</RelativeLayout>

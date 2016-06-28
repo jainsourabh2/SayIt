@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dip" >
+
+
+    <com.sayitviren.CustomSeekBar
+        style="@style/SeekBar"
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="15dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:indeterminate="false"
+        android:progress="0"
+        android:progressDrawable="@android:color/transparent"
+        android:thumbOffset="12dp" />
+     
+    <TextView
+        android:id="@+id/feedbackTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/seekBar1"
+        android:layout_centerHorizontal="true"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+</RelativeLayout> 
